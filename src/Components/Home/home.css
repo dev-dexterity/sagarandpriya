@@ -1,0 +1,158 @@
+/* HomePage.css */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400;500&display=swap');
+
+.home-section {
+  min-height: 100vh;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  /* Remove the background-color: #fff; */
+}
+
+/* Add these new styles for background handling */
+.home-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/src/assets/1.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 1; /* Adjust this value to make background lighter or darker */
+  z-index: -2;
+}
+
+/* Add a semi-transparent overlay for better text readability */
+.home-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7); /* Adjust the last value (0.7) for overlay transparency */
+  z-index: -1;
+}
+
+/* Update text colors for better contrast */
+.main-title h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4.5rem;
+  color: #1a1a1a; /* Darker color for better contrast */
+  margin-bottom: 0.5rem;
+  position: relative; /* Ensure text stays above background */
+}
+
+.wedding-date {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  color: #333; /* Darker color for better contrast */
+  font-weight: 300;
+  position: relative;
+}
+
+/* The rest of your existing styles remain the same */
+.image-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.couple-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.quote-container {
+  margin: 2rem 0;
+  position: relative;
+}
+
+.quote {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+}
+
+.countdown-value {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.countdown-label {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #333;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+}
+
+.save{
+    margin-top: 30px;
+}
+
+/* Rest of your media queries remain the same */
+@media (max-width: 768px) {
+  .main-title h1 {
+    font-size: 3rem;
+  }
+
+  .quote {
+    font-size: 1.5rem;
+  }
+
+  .countdown-container {
+    gap: 1rem;
+  }
+
+  .countdown-item {
+    min-width: 70px;
+  }
+
+  .countdown-value {
+    font-size: 1.8rem;
+  }
+
+  .countdown-label {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title h1 {
+    font-size: 2.5rem;
+  }
+
+  .wedding-date {
+    font-size: 1.2rem;
+  }
+}
